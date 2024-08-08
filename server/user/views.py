@@ -123,6 +123,7 @@ class CookieTokenRefreshView(jwt_views.TokenRefreshView):
 def user(request):
     try:
         user = models.User.objects.get(id=request.user.id)
+        print(user )
     except models.User.DoesNotExist:
         return response.Response(status_code=404)
 
